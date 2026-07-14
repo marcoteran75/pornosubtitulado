@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Descargar Video</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #311b92, #4a148c);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 3rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(0,0,0,0.4);
+      padding: 2rem;
+      border-radius: 15px;
+    }
+    h1 { color: #e1bee7; }
+    .thumbnail {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+    .download-btn {
+      display: inline-block;
+      background: #7e57c2;
+      color: white;
+      padding: 1rem 2.5rem;
+      font-size: 1.3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      margin: 1.5rem 0;
+      transition: 0.3s;
+    }
+    .download-btn:hover {
+      background: #9575cd;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="titulo">Descargando...</h1>
+    
+    <img id="imagen" class="thumbnail" src="https://via.placeholder.com/640x360/4a148c/ffffff?text=CARGANDO" alt="Miniatura">
+
+    <p>Video listo para descargar en HD</p>
+    
+    <a id="boton-descarga" href="#" class="download-btn" download>⬇ DESCARGAR VIDEO AHORA</a>
+    
+    <p style="margin-top:2rem; opacity:0.8;">Enlaces seguros • Sin registro • Subtítulos en español</p>
+  </div>
+
+  <script>
+    // Leer parámetros de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const title = urlParams.get('title');
+    const downloadUrl = urlParams.get('url');
+
+    if (title) {
+      document.getElementById('titulo').textContent = decodeURIComponent(title);
+    }
+    if (downloadUrl) {
+      document.getElementById('boton-descarga').href = downloadUrl;
+    }
+  </script>
+</body>
+</html>
