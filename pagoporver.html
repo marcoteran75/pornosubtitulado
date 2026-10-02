@@ -32,23 +32,8 @@
   </style>
 </head>
 <body>
-  <div class="player-container">
-    <iframe id="player" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"></iframe>
-  </div>
 
-  <script>
-    // Lee el parámetro ?v= de la URL
-    const params = new URLSearchParams(window.location.search);
-    const videoCode = params.get('v');
-
-    if (videoCode) {
-      // Carga el reproductor de MixDrop
-      document.getElementById('player').src = 'https://mixdrop.ag/e/' + videoCode;
-    } else {
-      // Si no hay código, muestra mensaje
-      document.body.innerHTML = '<h2 style="color:white; text-align:center;">No se especificó ningún video</h2>';
-    }
-  </script>
+  <
 
   
 
