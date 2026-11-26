@@ -202,18 +202,12 @@
       margin-bottom: 1.5rem;
     }
     
-    /* Una sola columna de videos */
-    .videos-column {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-    
     .category-section {
       background: rgba(255,255,255,0.08);
       border-radius: 12px;
       padding: 1.5rem;
       backdrop-filter: blur(6px);
+      margin-bottom: 2rem;
     }
     
     .category-section h2 {
@@ -224,9 +218,17 @@
       padding-bottom: 0.8rem;
     }
     
+    /* ========== GRID DE 3 COLUMNAS ========== */
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    
     /* Tarjeta de video */
     .video-card {
-      display: block;
+      display: flex;
+      flex-direction: column;
       background: #512da8;
       border-radius: 10px;
       overflow: hidden;
@@ -235,7 +237,6 @@
       transition: all 0.3s ease;
       text-decoration: none;
       color: inherit;
-      margin-bottom: 1.5rem;
     }
     
     .video-card:hover {
@@ -243,9 +244,15 @@
       box-shadow: 0 12px 25px rgba(0,0,0,0.6);
     }
     
+    .video-card a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    
     .video-card img {
       width: 100%;
-      height: 280px;
+      height: 220px;
       object-fit: cover;
       display: block;
     }
@@ -273,8 +280,8 @@
       background: #e63946;
       color: white;
       text-align: center;
-      padding: 14px 0;
-      font-size: 1.1rem;
+      padding: 12px 0;
+      font-size: 0.95rem;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -288,10 +295,15 @@
     
     .video-card h3 {
       margin: 0;
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: #fff;
-      padding: 1rem;
+      padding: 0.9rem 0.6rem;
       background: rgba(0,0,0,0.35);
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.3;
     }
     
     /* Banner PPV */
@@ -320,6 +332,12 @@
     }
     
     /* Responsive */
+    @media (max-width: 1100px) {
+      .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
     @media (max-width: 900px) {
       .main-layout {
         flex-direction: column;
@@ -329,7 +347,7 @@
         width: 100%;
         max-width: 100%;
         position: static;
-        order: 2; /* Sidebar debajo en móvil */
+        order: 2;
       }
       
       .content {
@@ -345,6 +363,20 @@
       
       .social-btn {
         flex: 1 1 140px;
+      }
+      
+      .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .video-card img {
+        height: 240px;
       }
     }
   </style>
@@ -369,10 +401,10 @@
       <div class="sidebar-box">
         <h3>Síguenos</h3>
         <div class="social-buttons">
-          <a href="  https://www.facebook.com/profile.php?id=61592641815393   " class="social-btn btn-facebook" target="_blank">📘 Facebook</a>
-          <a href=" https://x.com/Marcoantonmxif    " class="social-btn btn-twitter" target="_blank">🐦 Twitter / X</a>
+          <a href="https://www.facebook.com/profile.php?id=61592641815393" class="social-btn btn-facebook" target="_blank">📘 Facebook</a>
+          <a href="https://x.com/Marcoantonmxif" class="social-btn btn-twitter" target="_blank">🐦 Twitter / X</a>
           <a href="#" class="social-btn btn-instagram" target="_blank">📸 Instagram</a>
-          <a href=" https://t.me/x2x2x5   " class="social-btn btn-telegram" target="_blank">✈️ Telegram</a>
+          <a href="https://t.me/x2x2x5" class="social-btn btn-telegram" target="_blank">✈️ Telegram</a>
           <a href="#" class="social-btn btn-whatsapp" target="_blank">💬 WhatsApp</a>
           <a href="#" class="social-btn btn-youtube" target="_blank">▶️ YouTube</a>
         </div>
@@ -382,13 +414,9 @@
       <div class="sidebar-box">
         <h3>Publicidad</h3>
         <div class="ad-banner">
-          <!-- Reemplaza por tu imagen real -->
           <div style="font-size: 3rem;">📢</div>
           <p><strong>Espacio Publicitario</strong></p>
           <p>300x250</p>
-          <!-- Ejemplo con imagen:
-          <img src="tu-banner-1.jpg" alt="Publicidad">
-          -->
         </div>
       </div>
       
@@ -425,274 +453,161 @@
       
       <h2>Selección Destacada: Maduras · Teens · Interracial (Subtitulados en Español)</h2>
       
-      <div class="videos-column">
+      <!-- ========== MADURAS ========== -->
+      <section class="category-section" id="maduras">
+        <h2>Maduras</h2>
         
-        <!-- ========== MADURAS ========== -->
-        <section class="category-section" id="maduras">
-          <h2>Maduras</h2>
-
- <div class="video-card">
-   
-            <a href=" https://marcoteran75.github.io/tegustaloqueves/   ">
-              <img src=" https://i.postimg.cc/ydL2hBd0/vlcsnap-2026-11-25-17h30m09s084.png " alt="te gusta lo que ves">
+        <div class="videos-grid">
+          
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/tegustaloqueves/">
+              <img src="https://i.postimg.cc/ydL2hBd0/vlcsnap-2026-11-25-17h30m09s084.png" alt="te gusta lo que ves">
             </a>
-         
-            <h3>te gusta lo que ves </h3>
+            <h3>te gusta lo que ves</h3>
           </div>
 
-
-
-          
-
-
- <div class="video-card">
-   
-            <a href="https://marcoteran75.github.io/dijoserialaultimavez/ ">
-              <img src="https://i.postimg.cc/K8DG3b0b/vlcsnap-2026-11-24-19h02m36s498.png   " alt="dijo seria la ultima vez">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/dijoserialaultimavez/">
+              <img src="https://i.postimg.cc/K8DG3b0b/vlcsnap-2026-11-24-19h02m36s498.png" alt="dijo seria la ultima vez">
             </a>
-         
-            <h3>dijo seria la ultima vz</h3>
+            <h3>dijo seria la ultima vez</h3>
           </div>
 
-
-          
-
-
- <div class="video-card">
-   
-            <a href=" https://marcoteran75.github.io/losvecinosmalos/ ">
-              <img src="https://i.postimg.cc/D0Dfn8Jv/vlcsnap-2026-11-24-14h13m18s236.png " alt="los vecinos malos">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/losvecinosmalos/">
+              <img src="https://i.postimg.cc/D0Dfn8Jv/vlcsnap-2026-11-24-14h13m18s236.png" alt="los vecinos malos">
             </a>
-         
             <h3>los vecinos malos</h3>
           </div>
 
-
-
-
-
-
-          
-
- <div class="video-card">
-   
-            <a href=" https://marcoteran75.github.io/mesorprendejalandome/   ">
-              <img src="https://i.postimg.cc/0ydH66Z1/vlcsnap-2026-11-23-19h26m16s371.png " alt="me sorprende jalandome la verga ">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/mesorprendejalandome/">
+              <img src="https://i.postimg.cc/0ydH66Z1/vlcsnap-2026-11-23-19h26m16s371.png" alt="me sorprende jalandome la verga">
             </a>
-         
             <h3>me sorprende jalandome la verga</h3>
           </div>
 
-
-
-
-          
- <div class="video-card">
-
-<a href="https://marcoteran75.github.io/pasoapaso/    ">
-              <img src="https://i.postimg.cc/QCjKqrCZ/vlcsnap-2026-11-21-17h59m53s231.png " alt="paso a paso ">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/pasoapaso/">
+              <img src="https://i.postimg.cc/QCjKqrCZ/vlcsnap-2026-11-21-17h59m53s231.png" alt="paso a paso">
             </a>
-         
-            <h3>paso a paso </h3>
-   
+            <h3>paso a paso</h3>
           </div>
 
-    <div class="video-card">       
-          
-<a href="https://marcoteran75.github.io/hermanastros/ ">
-              <img src=" https://i.postimg.cc/RFZP0Wzz/vlcsnap-2026-11-19-20h51m30s612.png" alt="hermanastros ">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/hermanastros/">
+              <img src="https://i.postimg.cc/RFZP0Wzz/vlcsnap-2026-11-19-20h51m30s612.png" alt="hermanastros">
             </a>
-         
-            <h3>hermanastros </h3>
+            <h3>hermanastros</h3>
           </div>
 
-
-
- <div class="video-card">
-   
-<a href="https://marcoteran75.github.io/practicasperversas/ ">
-              <img src="https://i.postimg.cc/L8qT5Mf8/vlcsnap-2026-11-19-18h03m05s230.png " alt="practicas perversas ">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/practicasperversas/">
+              <img src="https://i.postimg.cc/L8qT5Mf8/vlcsnap-2026-11-19-18h03m05s230.png" alt="practicas perversas">
             </a>
-         
-            <h3>practicas perversas </h3>
+            <h3>practicas perversas</h3>
           </div>
 
-    <div class="video-card">
-
-<a href="https://marcoteran75.github.io/lamadurademissue-os/ ">
-              <img src="https://i.postimg.cc/XJCKT3bf/vlcsnap-2026-11-19-06h27m22s664.png " alt="la vecina se queda afuera">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/lamadurademissue-os/">
+              <img src="https://i.postimg.cc/XJCKT3bf/vlcsnap-2026-11-19-06h27m22s664.png" alt="la madura de mis sueños">
             </a>
-         
-            <h3>la madura de mis sueños </h3>
+            <h3>la madura de mis sueños</h3>
           </div>
 
-
- <div class="video-card">
-   
-            <a href="https://marcoteran75.github.io/lavecinasequedaafuera/  ">
-              <img src="https://i.postimg.cc/MpFXXHgf/vlcsnap-2026-11-18-17h20m27s084.png " alt="la vecina se queda afuera">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/lavecinasequedaafuera/">
+              <img src="https://i.postimg.cc/MpFXXHgf/vlcsnap-2026-11-18-17h20m27s084.png" alt="la vecina se queda afuera">
             </a>
-         
-            <h3>la vecina se queda afuera </h3>
+            <h3>la vecina se queda afuera</h3>
           </div>
 
-
-
-          
-
- <div class="video-card">
-            <a href=" https://marcoteran75.github.io/peque-asecomeunanegra/  ">
-              <img src=" https://i.postimg.cc/mkkzns5D/vlcsnap-2026-11-17-19h36m10s111.png " alt="pequeña se come una negra">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/peque-asecomeunanegra/">
+              <img src="https://i.postimg.cc/mkkzns5D/vlcsnap-2026-11-17-19h36m10s111.png" alt="pequeña se come una negra">
             </a>
-         
-            <h3>pequeña se come una negra  </h3>
+            <h3>pequeña se come una negra</h3>
           </div>
 
-
-
-
-          
-
- <div class="video-card">
-            <a href="https://marcoteran75.github.io/mamimeense-aajalarmela/  ">
-              <img src=" https://i.postimg.cc/g2dLMzkp/vlcsnap-2026-11-16-18h04m39s031.png  " alt="mami me enseñaa jalarmela">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/mamimeense-aajalarmela/">
+              <img src="https://i.postimg.cc/g2dLMzkp/vlcsnap-2026-11-16-18h04m39s031.png" alt="mami me enseña a jalarmela">
             </a>
-         
-            <h3>mama me enseña a jalarmela </h3>
+            <h3>mama me enseña a jalarmela</h3>
           </div>
 
-
-          
-
-
- <div class="video-card">
-            <a href="https://marcoteran75.github.io/conociendolaabuela/ ">
-              <img src="https://i.postimg.cc/bvXZCGnN/vlcsnap-2026-11-14-18h38m17s878.png " alt="conociendo a  la abuela">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/conociendolaabuela/">
+              <img src="https://i.postimg.cc/bvXZCGnN/vlcsnap-2026-11-14-18h38m17s878.png" alt="conociendo a la abuela">
             </a>
-         
-            <h3>conociendo la abuela </h3>
+            <h3>conociendo la abuela</h3>
           </div>
 
-
-          
-
- <div class="video-card">
-            <a href="https://marcoteran75.github.io/mimadrastramecomeelculo/ ">
-              <img src="https://i.postimg.cc/NGVKFmrX/vlcsnap-2026-11-13-18h19m25s606.png  " alt="mi madrastra me come el culo">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/mimadrastramecomeelculo/">
+              <img src="https://i.postimg.cc/NGVKFmrX/vlcsnap-2026-11-13-18h19m25s606.png" alt="mi madrastra me come el culo">
             </a>
-         
-            <h3>mi mAdrastra me come el culo  </h3>
+            <h3>mi madrastra me come el culo</h3>
           </div>
 
-
-
-          
-
- <div class="video-card">
-            <a href=" https://marcoteran75.github.io/ellameseduce/">
-              <img src=" https://i.postimg.cc/QxhvbKLG/vlcsnap-2026-11-12-11h16m59s162.png  " alt="ella me seduce">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/ellameseduce/">
+              <img src="https://i.postimg.cc/QxhvbKLG/vlcsnap-2026-11-12-11h16m59s162.png" alt="ella me seduce">
             </a>
-         
-            <h3>ella me seduce  </h3>
+            <h3>ella me seduce</h3>
           </div>
 
-
-          
-
- <div class="video-card">
-            <a href=" https://marcoteran75.github.io/brasile-o/">
-              <img src=" https://i.postimg.cc/TYQrh4c9/vlcsnap-2026-11-11-17h43m41s664.png  " alt="mi madrastra me hace comerle el culo">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/brasile-o/">
+              <img src="https://i.postimg.cc/TYQrh4c9/vlcsnap-2026-11-11-17h43m41s664.png" alt="mi madrastra me hace comerle el culo">
             </a>
-         
-            <h3>mi madrastra me hace comerle el culo  </h3>
+            <h3>mi madrastra me hace comerle el culo</h3>
           </div>
 
-
-
-          
- <div class="video-card">
-            <a href="https://marcoteran75.github.io/aluralegustanjovenes/   ">
-              <img src="https://i.postimg.cc/VLzk76WF/vlcsnap-2026-11-10-21h09m35s332.png " alt="alura le gustan vergudos">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/aluralegustanjovenes/">
+              <img src="https://i.postimg.cc/VLzk76WF/vlcsnap-2026-11-10-21h09m35s332.png" alt="alura le gustan vergudos">
             </a>
-         
-            <h3>alura le gustan vergudos </h3>
+            <h3>alura le gustan vergudos</h3>
           </div>
 
-
-
-
-          
-
-  <div class="video-card">
-            <a href="https://marcoteran75.github.io/reproductor/   ">
-              <img src=" https://i.postimg.cc/jSPhrkbR/vlcsnap-2026-11-10-19h15m19s761.png " alt="quitandole el novio a la hija ">
+          <div class="video-card">
+            <a href="https://marcoteran75.github.io/reproductor/">
+              <img src="https://i.postimg.cc/jSPhrkbR/vlcsnap-2026-11-10-19h15m19s761.png" alt="quitandole el novio a la hija">
             </a>
-         
-            <h3>quitandoel el novio a la hija</h3>
+            <h3>quitando el novio a la hija</h3>
           </div>
 
-
-
-          
- <div class="video-card">
-            <a href=" //t.me/+7Ck-x-p-7I9kYzcx">
-              <img src=" https://i.postimg.cc/2S37fPKs/vlcsnap-2026-11-04-18h23m17s415.png  " alt=" la proteina de mama ">
+          <div class="video-card">
+            <a href="https://t.me/+7Ck-x-p-7I9kYzcx" target="_blank">
+              <img src="https://i.postimg.cc/2S37fPKs/vlcsnap-2026-11-04-18h23m17s415.png" alt="la proteina de mama">
             </a>
-            <a href="https ://t.me/+7Ck-x-p-7I9kYzcx  " class="social-btn btn-telegram" target="_blank">✈️ Telegram  "></a>
             <h3>la proteina de mama</h3>
           </div>
 
-
-
-in de platano </h3>
-          </div>
-
-
-            
-          
- <div class="video-card">
+          <div class="video-card">
             <div class="video-wrapper">
-              <iframe src="  https://mxdrop.sx/e/z11x0z0lc9rxw9   " frameborder="0" scrolling="no" allowfullscreen allow="autoplay; fullscreen"></iframe>
+              <iframe src="https://mxdrop.sx/e/z11x0z0lc9rxw9" frameborder="0" scrolling="no" allowfullscreen allow="autoplay; fullscreen"></iframe>
             </div>
             <a href="pagoporver.html" class="banner-ver-completo">Ver completo</a>
-            <h3>dos paletas de chocolate </h3>
+            <h3>dos paletas de chocolate</h3>
           </div>
 
-
-          
-
-
-          
-
-
-
-
-
-          
-
- <div class="video-card">
+          <div class="video-card">
             <div class="video-wrapper">
-              <iframe src=" https://mxdrop.sx/e/9wngg6pgude76w   " frameborder="0" scrolling="no" allowfullscreen allow="autoplay; fullscreen"></iframe>
+              <iframe src="https://mxdrop.sx/e/9wngg6pgude76w" frameborder="0" scrolling="no" allowfullscreen allow="autoplay; fullscreen"></iframe>
             </div>
             <a href="pagoporver.html" class="banner-ver-completo">Ver completo</a>
-            <h3>la oficina </h3>
+            <h3>la oficina</h3>
           </div>
 
-
-
-
-
-          
-
- <div class="video-card">
+          <div class="video-card">
             <a href="pagoporver.html">
-              <img src=" https://i.postimg.cc/9MGNnqXS/vlcsnap-2026-11-01-16h07m10s531.png   " alt=" 5 minutos">
+              <img src="https://i.postimg.cc/9MGNnqXS/vlcsnap-2026-11-01-16h07m10s531.png" alt="5 minutos">
             </a>
             <a href="pagoporver.html" class="banner-ver-completo">Ver completo</a>
             <h3>5 minutos</h3>
           </div>
-          
-
 
           <div class="video-card">
             <a href="pagoporver.html?v=03v0qx4vbx1nw9">
@@ -701,34 +616,16 @@ in de platano </h3>
             <a href="pagoporver.html?v=03v0qx4vbx1nw9" class="banner-ver-completo">Ver completo</a>
             <h3>navidad</h3>
           </div>
-          
-          
-          
-          
-   
-        </section>
-        
-        <!-- ========== TEENS / JÓVENES ========== -->
-        <section class="category-section" id="teens">
-          <h2>Teens / Jóvenes</h2>
-          
-          <div class="video-card">
+
+
+<div class="video-card">
             <div class="video-wrapper">
               <iframe src="https://mxdrop.sx/e/jd960946h466gx" frameborder="0" scrolling="no" allowfullscreen allow="autoplay; fullscreen"></iframe>
             </div>
             <a href="pagoporver.html" class="banner-ver-completo">Ver completo</a>
             <h3>lena paul</h3>
           </div>
-          
-          
-          
-          
-        </section>
-        
-        <!-- ========== INTERRACIAL ========== -->
-        <section class="category-section" id="interracial">
-          <h2>Interracial</h2>
-          
+      
           <div class="video-card">
             <a href="pagoporver.html">
               <img src="https://i.postimg.cc/V6qzpmSh/vlcsnap-2026-09-30-13h22m26s328.png" alt="salvando el alma por el culo">
@@ -736,7 +633,6 @@ in de platano </h3>
             <a href="pagoporver.html" class="banner-ver-completo">Ver completo</a>
             <h3>salvando el alma por el culo</h3>
           </div>
-          
           
           <div class="video-card">
             <div class="video-wrapper">
@@ -746,11 +642,9 @@ in de platano </h3>
             <h3>vendiendo la casa</h3>
           </div>
           
-          
-          </div>
-        </section>
-        
-      </div>
+        </div>
+      </section>
+      
     </main>
   </div>
 </body>
